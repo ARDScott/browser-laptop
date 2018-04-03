@@ -48,6 +48,7 @@ if (isDarwin) {
   cmds.push('sha512sum -c tor.hash')
 }
 
+cmds.push('chmod +x ' + path.join(torPath, 'tor'))
 execute(cmds, '', (err) => {
   if (err) {
     console.error('package tor failed', err)
